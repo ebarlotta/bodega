@@ -3,17 +3,24 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Agregado;
+use App\Models\Umidad;
 
 class AgregadoController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    public $agregados;
+
+    protected function getunidad($id) {
+        $unidad = Unidad::where('id',$id);
+        dd($unidad);
+        return $unidad;
+    }
+
     public function index()
     {
-        //
+        $agregados = Agregado::all();
+
+        return view('agredados.index', compact('agregados'));
     }
 
     /**

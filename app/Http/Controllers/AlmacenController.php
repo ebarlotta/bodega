@@ -2,19 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\fs;
+use App\Models\Almacen;
 use Illuminate\Http\Request;
 
 class AlmacenController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    public $almacenes;
+
     public function index()
     {
-        //
+        $almacenes = Almacen::all();
+        return view('almacenes.index', compact('almacenes'));
     }
 
     /**

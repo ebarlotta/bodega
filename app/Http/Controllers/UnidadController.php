@@ -3,17 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Unidad;
 
 class UnidadController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    public $unidades;
+
     public function index()
     {
-        //
+        $unidades = Unidad::all();
+        return view('unidades.index', compact('unidades'));
     }
 
     /**

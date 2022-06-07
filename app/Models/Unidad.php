@@ -13,4 +13,8 @@ class Unidad extends Model
         'descripcion',
         'signo',
     ];
+
+    public function agregado() {
+        return $this->hasMany('App\Models\Agregado');
+    }
 }
