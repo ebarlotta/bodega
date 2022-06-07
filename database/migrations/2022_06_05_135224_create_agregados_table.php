@@ -15,6 +15,14 @@ class CreateAgregadosTable extends Migration
     {
         Schema::create('agregados', function (Blueprint $table) {
             $table->id();
+            $table->date('fecha');
+            $table->string('descripcion');
+            $table->integer('anio');
+            $table->boolean('activo');
+            
+            $table->unsignedBigInteger('unidad_id');
+            $table->foreign('unidad_id')->references('id')->on('unidads');
+
             $table->timestamps();
         });
     }

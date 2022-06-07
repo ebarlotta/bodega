@@ -51,6 +51,35 @@
                             <div class="flex items-center">
                                 <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
                                 <div class="ml-4 text-lg leading-7 font-semibold"><a href="https://laravel.com/docs" class="underline text-gray-900 dark:text-white">Documentation</a></div>
+                            
+
+                                <div class="col-sm-6 col-lg-4 mb-4" style="position: absolute; left: 0%; top: 410px;">
+                                    <div class="card bg-primary text-white text-center p-3">
+                                      <figure class="mb-0">
+                                        <blockquote class="blockquote">
+                                          <p>A well-known quote, contained in a blockquote element.</p>
+                                        </blockquote>
+                                        <figcaption class="blockquote-footer mb-0 text-white">
+                                          Someone famous in <cite title="Source Title">Source Title</cite>
+                                        </figcaption>
+                                      </figure>
+                                    </div>
+                                  </div>
+                                  <div class="col-sm-6 col-lg-4 mb-4" style="position: absolute; left: 0%; top: 410px;">
+                                    <div class="card bg-primary text-white text-center p-3">
+                                      <figure class="mb-0">
+                                        <blockquote class="blockquote">
+                                          <p>A well-known quote, contained in a blockquote element.</p>
+                                        </blockquote>
+                                        <figcaption class="blockquote-footer mb-0 text-white">
+                                          Someone famous in <cite title="Source Title">Source Title</cite>
+                                        </figcaption>
+                                      </figure>
+                                    </div>
+                                  </div>
+
+
+
                             </div>
 
                             <div class="ml-12">

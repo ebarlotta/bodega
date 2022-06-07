@@ -15,10 +15,10 @@ class CreatePiletasTable extends Migration
     {
         Schema::create('piletas', function (Blueprint $table) {
             $table->id();
-
-            $table->double('Capacidad');
-            $table->string('Estado');
-            $table->boolean('Activo');
+            $table->double('capacidad');
+            $table->double('nropileta');
+            $table->string('estado');
+            $table->boolean('activo');
 
             $table->timestamps();
         });

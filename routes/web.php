@@ -1,6 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AgregadoController;
+use App\Http\Controllers\AlmacenController;
+use App\Http\Controllers\PiletaController;
+use App\Http\Controllers\UnidadController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -26,3 +31,8 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
+
+Route::resource('agregados', AgregadoController::class);
+Route::resource('almacenes', AlmacenController::class);
+Route::resource('piletas', PiletaController::class);
+Route::resource('unidades', UnidadController::class);

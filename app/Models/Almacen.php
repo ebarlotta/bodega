@@ -9,5 +9,8 @@ class Almacen extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['descripcion', 'activo'];
+    protected $fillable = [
+        'descripcion', 
+        'activo',
+    ];
 }

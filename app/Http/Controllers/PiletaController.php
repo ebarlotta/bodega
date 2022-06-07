@@ -3,17 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Pileta;
 
 class PiletaController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    public $piletas;
+
     public function index()
     {
-        //
+        $piletas = Pileta::all();
+    
+        return view('piletas.index', compact('piletas'));
     }
 
     /**

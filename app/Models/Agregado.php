@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Agregado extends Model
 {
     use HasFactory;
+
+    protected $fillable=[
+        'fecha',
+        'descripcion',
+        'anio',
+        'activo',
+        'unidad_id',
+    ];
 }

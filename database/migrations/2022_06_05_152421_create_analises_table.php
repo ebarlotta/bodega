@@ -27,8 +27,8 @@ class CreateAnalisesTable extends Migration
             $table->double('Color');
             $table->double('LC');
             $table->double('Matiz');
-            $table->unsignedBigInteger('IdPileta');
-            $table->foreign('IdPileta')->references('id')->on('Piletas');
+            $table->unsignedBigInteger('pileta_id');
+            $table->foreign('pileta_id')->references('id')->on('piletas');
             $table->timestamps();
         });
     }

@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class AlmacenSeeder extends Seeder
 {
@@ -13,6 +14,7 @@ class AlmacenSeeder extends Seeder
      */
     public function run()
     {
-        //
+        DB::table('almacens')->insert(['descripcion' => 'Bodega','activo' => 1,]);
+        DB::table('almacens')->insert(['descripcion' => 'Almacen','activo' => 1,]);
     }
 }
