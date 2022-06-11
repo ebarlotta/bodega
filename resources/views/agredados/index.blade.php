@@ -1,3 +1,8 @@
+@extends('adminlte::page')
+
+@section('content')
+
+
 <x-app-layout>
     <x-slot name="header">
 
@@ -33,3 +38,5 @@
     </x-slot>
 
 </x-app-layout>
+
+@stop

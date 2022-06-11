@@ -8,6 +8,7 @@ use App\Models\Unidad;
 class UnidadController extends Controller
 {
     public $unidades;
+    public $estado;
 
     public function index()
     {
@@ -15,69 +16,55 @@ class UnidadController extends Controller
         return view('unidades.index', compact('unidades'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
-        //
+        return view('unidades.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'descripcion' => 'required',
+            'signo' => 'required',
+        ]);
+        
+        $unidad = new Unidad;
+        $unidad->descripcion = $request->descripcion;
+        $unidad->signo = $request->signo;
+        $unidad->save();
+
+        $unidades = Unidad::all();
+        return redirect()->route('unidades.index')->with('estado','Alta Exitosa!');
+        // return view('unidades.index', compact('unidades'))->with('estado','AltaExitosa!');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
-        //
+        $unidad = Unidad::find($id);
+
+        return view ('unidades.edit', compact('unidad'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
-        //
+
+        $request->validate([
+            'descripcion' => 'required',
+            'signo' => 'required',
+        ]);
+
+        $unidad = Unidad::find($id);
+        $unidad->descripcion = $request->descripcion;
+        $unidad->signo = $request->signo;
+        $unidad->save();
+        return redirect()->route('unidades.index')->with('estado','Modificacion Exitosa!');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
-        //
+        $unidad = Unidad::find($id);
+        $unidad->delete();
+
+        return redirect()->route('unidades.index')->with('estado','Eliminado!');
     }
 }
