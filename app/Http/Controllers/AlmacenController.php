@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 class AlmacenController extends Controller
 {
     public $almacenes;
+    public $estado;
 
     public function index()
     {
@@ -15,69 +16,55 @@ class AlmacenController extends Controller
         return view('almacenes.index', compact('almacenes'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
-        //
+        return view('almacenes.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'descripcion' => 'required',
+            'activo' => 'required',
+        ]);
+        
+        $almacen = new Almacen;
+        $almacen->descripcion = $request->descripcion;
+        $almacen->activo = $request->activo;
+        $almacen->save();
+
+        $almacenes = Almacen::all();
+        return redirect()->route('almacenes.index')->with('estado','Alta Exitosa!');
+        // return view('almacenes.index', compact('almacenes'))->with('estado','AltaExitosa!');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\fs  $fs
-     * @return \Illuminate\Http\Response
-     */
-    public function show(fs $fs)
+    public function edit($id)
     {
-        //
+        $almacen = Almacen::find($id);
+
+        return view ('almacenes.edit', compact('almacen'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\fs  $fs
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(fs $fs)
+    public function update(Request $request, $id)
     {
-        //
+
+        $request->validate([
+            'descripcion' => 'required',
+            'activo' => 'required',
+        ]);
+
+        $almacen = Almacen::find($id);
+        $almacen->descripcion = $request->descripcion;
+        $almacen->activo = $request->activo;
+        $almacen->save();
+        return redirect()->route('almacenes.index')->with('estado','Modificacion Exitosa!');
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\fs  $fs
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, fs $fs)
+    public function destroy($id)
     {
-        //
-    }
+        $almacen = Almacen::find($id);
+        $almacen->delete();
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\fs  $fs
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(fs $fs)
-    {
-        //
+        return redirect()->route('almacenes.index')->with('estado','Eliminado!');
     }
 }

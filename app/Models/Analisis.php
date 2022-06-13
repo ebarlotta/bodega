@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Pileta;
 
 class Analisis extends Model
 {
@@ -22,4 +23,10 @@ class Analisis extends Model
         'LC',
         'Matiz',
     ];
+    
+    public function piletas()
+    {
+        return $this->hasMany(Pileta::class, 'id', 'pileta_id');
+        
+    }
 }

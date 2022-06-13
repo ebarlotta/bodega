@@ -5,6 +5,7 @@ use App\Http\Controllers\AgregadoController;
 use App\Http\Controllers\AlmacenController;
 use App\Http\Controllers\PiletaController;
 use App\Http\Controllers\UnidadController;
+use App\Http\Controllers\AnalisisController;
 
 
 /*
@@ -36,3 +37,4 @@ Route::resource('agregados', AgregadoController::class);
 Route::resource('almacenes', AlmacenController::class);
 Route::resource('piletas', PiletaController::class);
 Route::resource('unidades', UnidadController::class);
+Route::resource('analisis', AnalisisController::class);

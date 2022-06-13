@@ -5,35 +5,11 @@
 <x-app-layout>
     <x-slot name="header">
 
-
-        {{-- <div class="card-body text-center">
-            <p>Vista de Socios.</p>
-        </div>
-        <div class="card-deck">
-            <div class="card bg-primary">
-                <div class="card-body text-center">
-                    <p class="card-text">Some text inside the first card</p>
-                </div>
-            </div>
-            <div class="card bg-warning">
-                <div class="card-body text-center">
-                    <p class="card-text">Some text inside the second card</p>
-                </div>
-            </div>
-            <div class="card bg-success">
-                <div class="card-body text-center">
-                    <p class="card-text">Some text inside the third card</p>
-                </div>
-            </div>
-
-        </div>
-        <div class="card shadow-md bg-danger">
-            <div class="card-body text-center">
-                <p class="card-text">Some text inside the fourth card</p>
-            </div>
-        </div> --}}
         <div class="card-body text-center">
             <p class="card-text">Listado de Piletas</p>
+            <a class="float-right" href="{{ route('piletas.create') }}">
+                <button type="button" class="card-text bg-success text-center rounded-md px-3 mr-1 shadow-lg">Agregar</button>
+            </a>
         </div>
 
         @foreach ($piletas as $pileta)
@@ -53,8 +29,14 @@
                         <p class="card-text">Opciones</p>
                     </div>
                     <div class="card-body justify-center flex my-0 py-0">
-                        <p class="card-text bg-warning col-5 text-center rounded-md mr-1 shadow-lg">Modificar</p>
-                        <p class="card-text bg-danger col-5 text-center rounded-md ml-1 shadow-lg">Eliminar</p>
+                        <a href="{{ route('piletas.edit', $pileta->id) }}" class="card-text bg-warning col-5 text-center rounded-md mr-1 shadow-lg">
+                            Modificar
+                        </a>
+                        <form action="{{ route('piletas.destroy', $pileta->id) }}" method="POST">
+                            <button class="card-text bg-danger col-12 text-center rounded-md ml-1 shadow-lg" type="submit" class="btn btn-danger">Eliminar</button>
+                            @csrf
+                            @method('DELETE')
+                        </form>
                     </div>
                 </div>
             </div>

@@ -8,77 +8,74 @@ use App\Models\Pileta;
 class PiletaController extends Controller
 {
     public $piletas;
+    public $estado;
+    public $capacidad;
+    public $nropileta;
+    public $activo;
 
     public function index()
     {
         $piletas = Pileta::all();
-    
         return view('piletas.index', compact('piletas'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
-        //
+        return view('piletas.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'nropileta' => 'required|integer',
+            'capacidad' => 'required|integer',
+            'estado' => 'required',
+            'activo' => 'required',
+        ]);
+        
+        $pileta = new Pileta;
+        $pileta->nropileta = $request->nropileta;
+        $pileta->capacidad = $request->capacidad;
+        $pileta->estado = $request->estado;
+        $pileta->activo = $request->activo;
+        $pileta->save();
+
+        $piletas = Pileta::all();
+        return redirect()->route('piletas.index')->with('estado','Alta Exitosa!');
+        // return view('piletas.index', compact('piletas'))->with('estado','AltaExitosa!');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
-        //
+        $pileta = Pileta::find($id);
+
+        return view ('piletas.edit', compact('pileta'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
-        //
+
+        $request->validate([
+            'nropileta' => 'required|integer',
+            'capacidad' => 'required|integer',
+            'estado' => 'required',
+            'activo' => 'required',
+        ]);
+
+        $pileta = Pileta::find($id);
+        $pileta->nropileta = $request->nropileta;
+        $pileta->capacidad = $request->capacidad;
+        $pileta->estado = $request->estado;
+        $pileta->activo = $request->activo;
+        $pileta->save();
+        return redirect()->route('piletas.index')->with('estado','Modificacion Exitosa!');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
-        //
+        $pileta = Pileta::find($id);
+        $pileta->delete();
+
+        return redirect()->route('piletas.index')->with('estado','Eliminado!');
     }
 }

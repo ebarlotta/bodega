@@ -266,7 +266,7 @@ return [
         ],
         [
             'text' => 'Análisis',
-            'url'  => 'análisis',
+            'url'  => 'analisis',
             'icon' => 'fas fa-fw fa-lock',
         ],
         [
