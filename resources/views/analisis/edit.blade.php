@@ -9,9 +9,10 @@
                 <p class="card-text">Modificar Análisis</p>
             </div>
 
-            <form action="{{ route('analisis.store') }}" method="POST">
+            <form action="{{ route('analisis.update',$analisis->id) }}" method="POST">
                 <div class="card shadow-lg mt-3 col-12 flex-row" style="background-color: rgb(190, 190, 190);">
                     @csrf
+                    @method('PUT')
                     <div class="card-body justify-left w-2/4">
                         <p class="mb-2">Fecha: <input name="Fecha" type="date" class="rounded-md pl-2" value="{{$analisis->FechaAnalisis}}">
                         @if ($errors->get('Fecha'))
@@ -67,11 +68,9 @@
                     </div>
                     <div class="card-body justify-left my-0 py-0 w-2/4">
                         <div class="card-body justify-center flex">
-                            <button type="submit"
-                                class="card-text bg-warning col-6 text-center rounded-md
-                                mr-1 shadow-lg">Agregar</button>
-                            <a href="{{ route('analisis.index') }}" <p
-                                class="card-text bg-danger col-6 text-center rounded-md ml-1 shadow-lg">Volver</p>
+                            <button type="submit" class="card-text bg-warning col-6 text-center rounded-md
+                                mr-1 shadow-lg">Modificar</button>
+                            <a href="{{ route('analisis.index') }}" <p class="card-text bg-danger col-6 text-center rounded-md ml-1 shadow-lg">Volver</p>
                             </a>
                         </div>
                     </div>

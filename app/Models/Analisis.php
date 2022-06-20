@@ -22,6 +22,7 @@ class Analisis extends Model
         'Color',
         'LC',
         'Matiz',
+        'pileta_id',
     ];
     
     public function piletas()

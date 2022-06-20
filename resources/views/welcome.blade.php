@@ -57,7 +57,7 @@
                                     <div class="card bg-primary text-white text-center p-3">
                                       <figure class="mb-0">
                                         <blockquote class="blockquote">
-                                          <p>A well-known quote, contained in a blockquote element.</p>
+                                          <
                                         </blockquote>
                                         <figcaption class="blockquote-footer mb-0 text-white">
                                           Someone famous in <cite title="Source Title">Source Title</cite>
@@ -69,7 +69,7 @@
                                     <div class="card bg-primary text-white text-center p-3">
                                       <figure class="mb-0">
                                         <blockquote class="blockquote">
-                                          <p>A well-known quote, contained in a blockquote element.</p>
+                                          
                                         </blockquote>
                                         <figcaption class="blockquote-footer mb-0 text-white">
                                           Someone famous in <cite title="Source Title">Source Title</cite>

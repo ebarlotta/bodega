@@ -255,29 +255,36 @@ return [
         // ],
         ['header' => 'Administración'],
         [
-            'text' => 'Agregados',
-            'url'  => 'agregados',
-            'icon' => 'fas fa-fw fa-user',
-        ],
-        [
-            'text' => 'Almacenes',
-            'url'  => 'almacenes',
-            'icon' => 'fas fa-fw fa-lock',
+            'text' => 'Configuración',
+            'url'  => 'socios',
+            'icon' => 'fa fa-cog',
+            'submenu' => [
+            [
+                'text' => 'Agregados',
+                'url'  => 'agregados',
+                'icon' => 'fas fa-fw fa-user',
+            ],
+            [
+                'text' => 'Almacenes',
+                'url'  => 'almacenes',
+                'icon' => 'fas fa-fw fa-store',
+            ],
+            [
+                'text' => 'Piletas',
+                'url'  => 'piletas',
+                'icon' => 'fas fa-fw fa-cauldron',
+            ],        
+            [
+                'text' => 'Unidades',
+                'url'  => 'unidades',
+                'icon' => 'fas fa-fw fa-users',
+            ],
+            ],
         ],
         [
             'text' => 'Análisis',
             'url'  => 'analisis',
-            'icon' => 'fas fa-fw fa-lock',
-        ],
-        [
-            'text' => 'Piletas',
-            'url'  => 'piletas',
-            'icon' => 'fas fa-fw fa-lock',
-        ],
-        [
-            'text' => 'Unidades',
-            'url'  => 'unidades',
-            'icon' => 'fas fa-fw fa-lock',
+            'icon' => 'fas fa-fw fa-chart-line',
         ],
     ],
 

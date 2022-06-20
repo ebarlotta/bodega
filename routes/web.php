@@ -6,6 +6,7 @@ use App\Http\Controllers\AlmacenController;
 use App\Http\Controllers\PiletaController;
 use App\Http\Controllers\UnidadController;
 use App\Http\Controllers\AnalisisController;
+use App\Http\Controllers\ChartController;
 
 
 /*
@@ -18,6 +19,20 @@ use App\Http\Controllers\AnalisisController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+// Route::get('chart', 'ChartController@index');
+// Route::get('chart', function () {
+//     return view('user');
+// });
+
+Route::controller(ChartController::class)->group(function () {
+    Route::get('chart', 'index');
+});
+
+Route::controller(ChartController::class)->group(function () {
+    Route::get('seguimiento','index');
+});
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -38,3 +53,4 @@ Route::resource('almacenes', AlmacenController::class);
 Route::resource('piletas', PiletaController::class);
 Route::resource('unidades', UnidadController::class);
 Route::resource('analisis', AnalisisController::class);
+
