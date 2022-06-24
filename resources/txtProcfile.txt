@@ -1,1 +1,51 @@
 web: vendor/bin/heroku-php-apache2 public/
+
+heroku login
+
+heroku create
+   https://calm-forest-87232.herokuapp.com/ 
+
+git remote
+
+git add .
+
+git commit -m "Comentario"
+
+git push heroku [ master | origin ]
+
+$ cd my-project/
+$ git init
+$ heroku git:remote -a calm-forest-87232
+
+en el archivo .env copiamos los datos
+APP_NAME=Laravel
+APP_ENV=local
+APP_KEY=base64:28fU/u7J/DbSIZ0wQha9F3Oi1dETi4R+YzGBBvSd538=
+APP_DEBUG=true
+APP_URL=https://calm-forest-87232.herokuapp.com/
+
+mediante el comando 
+heroku congig:add APP_NAME=Laravel  //por ejemplo
+
+heroku addons:create heroku-postgresql:hobby-dev
+
+heroku pg:credentials:url
+
+dbname=d8htoe3729ur9t 
+host=ec2-54-157-16-196.compute-1.amazonaws.com 
+port=5432 
+user=chncrnzwhycbvn 
+password=efdb0d6c13cf8ad5878ae3fa5edf27bfbf8c7cf03e571a76c56f8277256683ee 
+sslmode=require"
+Connection URL:
+   postgres://chncrnzwhycbvn:efdb0d6c13cf8ad5878ae3fa5edf27bfbf8c7cf03e571a76c56f8277256683ee@ec2-54-157-16-196.compute-1.amazonaws.com:5432/d8htoe3729ur9t
+
+heroku congig:add 
+DB_CONNECTION=pgsql
+DB_HOST=ec2-54-157-16-196.compute-1.amazonaws.com
+DB_PORT=5432
+DB_DATABASE=d8htoe3729ur9t
+DB_USERNAME=chncrnzwhycbvn
+DB_PASSWORD=efdb0d6c13cf8ad5878ae3fa5edf27bfbf8c7cf03e571a76c56f8277256683ee
+
+heroku run bash
