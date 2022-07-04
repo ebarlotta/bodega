@@ -7,12 +7,13 @@
 
             <div class="text-center">
                 <p>Seguimiento</p>
-                {{-- <a class="float-right" href="{{ route('analisis.create') }}">
+            </div>
+                    {{-- <a class="float-right" href="{{ route('analisis.create') }}">
                     <button type="button"
                         class="card-text bg-success text-center rounded-md px-3 mr-1 shadow-lg">Agregar</button>
-                </a> --}}
-                <div class="flex">
-                    <div class="col-md-6">
+                    </a> --}}
+                <div class="col-12 flex flex-wrap">
+                    <div class="col-12 col-xl-6 col-md-6">
                         <div class="card card-info">
                             <div class="card-header">
                                 <h3 class="card-title">Line Chart</h3>
@@ -32,7 +33,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6 text-left ml-4">
+                    <div class="col-12 col-xl-6 col-md-6 flex-md-column flex-md-wrap">
                         <input name="chkAz" type="checkbox" checked> Azucar<br>
                         <input name="chkAlc" type="checkbox" checked> Alcohól<br>
                         <input name="chkPh" type="checkbox" checked> PH<br>
@@ -45,7 +46,6 @@
                         <input name="chkMatiz" type="checkbox" checked> Matiz<br>
                     </div>
                 </div>
-            </div>
         </x-slot>
     </x-app-layout>
 
