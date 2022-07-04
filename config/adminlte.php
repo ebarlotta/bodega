@@ -368,16 +368,16 @@ return [
                 ],
             ],
         ],
-        'Sweetalert2' => [
-            'active' => false,
-            'files' => [
-                [
-                    'type' => 'js',
-                    'asset' => false,
-                    'location' => '//cdn.jsdelivr.net/npm/sweetalert2@8',
-                ],
-            ],
-        ],
+        // 'Sweetalert2' => [
+        //     'active' => false,
+        //     'files' => [
+        //         [
+        //             'type' => 'js',
+        //             'asset' => false,
+        //             'location' => '//cdn.jsdelivr.net/npm/sweetalert2@8',
+        //         ],
+        //     ],
+        // ],
         'Pace' => [
             'active' => false,
             'files' => [
