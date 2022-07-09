@@ -1,17 +1,15 @@
 {
-    "name": "Laravel Package Tutorial",
+    "name": "Control de Stock de Bodega",
     "short_name": "LPT",
     "start_url": "/index.php",
     "background_color": "#6777ef",
-    "description": "Tutorial of Laravel Package",
+    "description": "Control de Stock de Bodega",
     "display": "fullscreen",
     "theme_color": "#6777ef",
-    "icons": [
-        {
-            "src": "logo.PNG",
-            "sizes": "512x512",
-            "type": "image/png",
-            "purpose": "any maskable"
-        }
-    ]
+    "icons": [{
+        "src": "favicons/favicon.ico",
+        "sizes": "512x512",
+        "type": "image/png",
+        "purpose": "any maskable"
+    }]
 }
